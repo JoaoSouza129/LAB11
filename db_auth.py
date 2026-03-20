@@ -7,9 +7,9 @@ import email_validator
 def get_db():
     db = pymysql.connect(
         host='localhost',
-        user='a22304873',
-        password='f0781e',
-        database='db_a22304873',
+        user='db_username',
+        password='db_password',
+        database='db_name',
         charset='utf8mb4',
         cursorclass=pymysql.cursors.DictCursor)
     return db
