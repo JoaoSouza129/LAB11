@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <table class="table">
+    <thead>
+        <tr>
+            <th>Item</th>
+            <th>Produto</th>
+            <th>Qtd</th>
+            <th>Subtotal</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for order_d in order_details %}
+        <tr>
+            <td><img class="img-fluid" src="{{url_for('static',filename='images/'+order_d.image)}}"></td>
+            <td>{{ order_d.name }}</td>
+            <td>{{ order_d.quantity }}</td>
+            <td>{{ order_d.price * order_d.quantity }} &euro;</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</body>
+</html>
